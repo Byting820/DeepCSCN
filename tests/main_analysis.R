@@ -14,6 +14,7 @@ library(Seurat)
 library(DT)
 library(WGCNA)
 library(lsa)
+library(DeepCSCN)
 
 # Source custom functions
 # source("R/global_coexpression_net.R")
@@ -24,14 +25,14 @@ expr_data_path <- 'data/processed/pbmc1-Drop-1000hvg.csv'
 features_path <- 'data/processed/features.csv'
 
 if (file.exists(expr_data_path) & file.exists(features_path)) {
-    expr_data <- read.csv(expr_data_path, sep = '\t', row.names = 1, check.names = FALSE)
-    features <- read.csv(features_path, row.names = 1)
+    count <- read.csv(expr_data_path, sep = '\t', row.names = 1, check.names = FALSE)
+    feat <- read.csv(features_path, row.names = 1)
 } else {
     stop("Error: Required data files not found.")
 }
 
 #1. global network
-global_res = global_net(features)
+global_res = global_net(feat)
 write.csv(global_res$global_cluster,"data/res/global_cluster_res.csv")
 
 # Function to associate modules with cell types
@@ -48,8 +49,6 @@ dev.off()
 
 
 #2. cell-type-spscific network
-count <- read.csv('data/raw/pbmc1-Drop-1000hvg.csv', sep = '\t', row.names = 1)
-feat <- read.csv('data/processed/features.csv', row.names = 1, header = TRUE)
 meta_data <- read.table('data/processed/meta_human.txt', sep = '\t', header = TRUE)
 meta <- meta_data[((meta_data$Experiment == 'pbmc1') & (meta_data$Method == 'Drop-seq')),]
 rownames(meta) <- meta$NAME_TYPE
