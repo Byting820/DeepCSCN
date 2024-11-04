@@ -16,24 +16,28 @@ install.packages("devtools")
 devtools::install_github("Byting820/DeepCSCN")
 ```
 
+## Data preparation
+
+- count: Preprocessed gene expression matrix
+- feat: Gene feature matrix extracted by GeneCluster model(https://github.com/Byting820/GeneCluster)
+- meta: Celltype meta info
+- marker: Marker genes for different cell types
+
+
 ## Usage
 
 ### Load the package
 
 ```r
 library(DeepCSCN)
-# Load your expression data and features
-# features from GeneCluster model(https://github.com/Byting820/GeneCluster)
-expr_data_path <- 'data/processed/pbmc1-Drop-1000hvg.csv'
-features_path <- 'data/processed/features.csv'
-
-expr_data <- read.csv(expr_data_path, sep = '\t', row.names = 1, check.names = FALSE)
-features <- read.csv(features_path, row.names = 1)
+# Load your data
+count <- read.csv('data/processed/pbmc1-Drop-1000hvg.csv', sep = '\t', row.names = 1, check.names = FALSE)
+feat <- read.csv('data/processed/features.csv', row.names = 1)
+meta <- read.table('data/processed/meta_human.txt', row.names = 1, check.names = FALSE)
 
 # 1. Generate global gene co-expression network
-global_res <- global_net(features)
-global_cluster_res <- global_res$sorted_clusters
-write.csv(global_cluster_res, "data/res/global_cluster_res.csv")
+global_res <- global_net(feat)
+print(global_res$sorted_clusters)
 
 # 2. Associate modules with cell types
 clusres <- "data/res/global_cluster_res.csv"
@@ -44,18 +48,12 @@ p <- hist_enrichment_plot(t(result$pvalue), t(result$crosstable ))
 draw(p)   
 dev.off()
 
-# 3. Analyze cell type-specific networks
-count <- read.csv('data/raw/pbmc1-Drop-1000hvg.csv', sep = '\t', row.names = 1)
-meta_data <- read.table('data/processed/meta_human.txt', sep = '\t', header = TRUE)
-meta <- meta_data[(meta_data$Experiment == 'pbmc1') & (meta_data$Method == 'Drop-seq'),]
-rownames(meta) <- meta$NAME_TYPE
-# Perform analysis for a specific cell type
-DEG_path <- 'data/processed/markerGene.csv'
-celltype_feat_path <- "data/res/B cell_feat.csv"
+# 3. Generate cell-type-specific networks
 celltype_name <- "B cell"
-CelltypeFeat(DEG_path, features, count, meta)
+celltype_feat_path <- "data/res/B cell_feat.csv"
+CelltypeFeat('data/processed/markerGene.csv', features, count, meta)
 celltype_net <- CelltypeNet(celltype_feat_path, celltype_name, count, meta)
-write.csv(celltype_net, "data/res/celltype_net.csv")
+print(celltype_net)
 
 ```
 
@@ -66,8 +64,8 @@ write.csv(celltype_net, "data/res/celltype_net.csv")
 
 - global_net(): Generates the global gene co-expression network.
 - CelltypeModuleMap(): Associates gene modules with specific cell types.
-- CelltypeNet(): Calculates module-specific scores and identifies cell type-specific networks.
-- Run_GO(): Performs Gene Ontology enrichment analysis.
+- CelltypeFeat(): Get celltype related feratures. 
+- CelltypeNet(): Calculates module-specific scores and identifies cell-type-specific modules.
 
 
 ## Contact
