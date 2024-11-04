@@ -231,7 +231,7 @@ CelltypeNet <- function(celltype_feat_path, celltye_name,count,meta){
     score = calcModuleScore(count,Cluster_res$celltype_cluster,celltye_name,meta)
     M1_expr = score$M1_expr
     M2_expr = score$M2_expr
-    print(sprintf("module1 score is %s; module2 score is %s", M1_expr, M2_expr))
+    # print(sprintf("module1 score is %s; module2 score is %s", M1_expr, M2_expr))
 
     celltype_net = CelltypeClusterRes(M1_expr, M2_expr,Cluster_res$celltype_cluster,Cluster_res$celltype_cor)
     return(celltype_net)
