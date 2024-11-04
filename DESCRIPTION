@@ -1,0 +1,11 @@
+Package: DeepCSCN
+Type: Package
+Title: Deep Learning Driven Cell-Type-Specific Embedding for Inference of Single-Cell Co-expression Networks
+Version: 0.1.0
+Author: Byting
+Maintainer: Byting <yutingya820@gmail.com>
+Description: A package for cell-type-specific gene co-expression network analysis.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.2
