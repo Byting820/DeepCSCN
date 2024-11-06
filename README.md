@@ -37,7 +37,7 @@ meta <- read.table('data/processed/meta_human.txt', row.names = 1, check.names =
 
 # 1. Generate global gene co-expression network
 global_res <- global_net(feat)
-print(global_res$sorted_clusters)
+print(global_res$global_cluster)
 
 # 2. Associate modules with cell types
 clusres <- "data/res/global_cluster_res.csv"
