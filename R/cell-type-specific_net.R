@@ -22,6 +22,10 @@
 #'
 #' @export
 CelltypeFeat <- function(DEG_path, feat, count,sort_meta) {
+    if (!dir.exists("res/")) {
+    dir.create("res/", recursive = TRUE)
+    }
+
     DEG <- read.csv(DEG_path, row.names = 1)
     new_feat <- feat[rownames(DEG), ]
     new_count <- count[rownames(DEG), rownames(sort_meta)]
@@ -33,7 +37,7 @@ CelltypeFeat <- function(DEG_path, feat, count,sort_meta) {
         xcell_FeatExprCor <- abs_FeatExprCor[, colnames(abs_FeatExprCor) %in% rownames(sample)]
         top100_feat <- data.frame(cor = sort(rowMeans(xcell_FeatExprCor), decreasing = TRUE)[1:100])
         xcell_feat <- feat[, colnames(feat) %in% rownames(top100_feat)]
-        write.csv(xcell_feat, paste("data/res/", i, "_feat.csv", sep = ''))
+        write.csv(xcell_feat, paste("res/", i, "_feat.csv", sep = ''))
     }
 }
 
@@ -96,11 +100,14 @@ calcModuleScore <- function(count,celltype_module,celltye_name,meta){
 #' @param cor A correlation matrix.
 #' @return A data frame of clusters.
 #' @export
-second_cluster <- function(cor) {
+second_cluster <- function(cor,minClusterSize=10) {
     dist_cor <- 1 - cor
     hclust_dist <- hclust(as.dist(dist_cor), method = "average")
-    memb <- dynamicTreeCut::cutreeDynamic(dendro = hclust_dist, distM = dist_cor, deepSplit = 2, 
-                                            pamRespectsDendro = FALSE, minClusterSize = 10)
+    memb <- dynamicTreeCut::cutreeDynamic(dendro = hclust_dist, 
+                                            distM = dist_cor, 
+                                            deepSplit = 2, 
+                                            pamRespectsDendro = FALSE, 
+                                            minClusterSize = minClusterSize)
     names(memb) <- colnames(cor)
     memb_df <- as.data.frame(memb)
     colnames(memb_df) <- "cluster"
