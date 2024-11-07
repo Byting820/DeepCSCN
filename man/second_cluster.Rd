@@ -4,7 +4,7 @@
 \alias{second_cluster}
 \title{Cluster Using Dynamic Tree Cut}
 \usage{
-second_cluster(cor)
+second_cluster(cor, minClusterSize = 10)
 }
 \arguments{
 \item{cor}{A correlation matrix.}

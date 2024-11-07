@@ -4,10 +4,10 @@
 \alias{global_net}
 \title{Gene Co-expression Network}
 \usage{
-global_net(feat_matrix)
+global_net(feat_matrix, minClusterSize = 10)
 }
 \arguments{
-\item{cor}{A frature matrix from GeneCluster model.}
+\item{feat_matrix}{A frature matrix from GeneCluster model.}
 }
 \value{
 Data frames of cormatrix and global cluster.

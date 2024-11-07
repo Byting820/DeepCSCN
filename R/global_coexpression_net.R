@@ -5,7 +5,6 @@
 #' @title Gene Co-expression Network
 #' @author Byting
 #' @import Seurat
-#' @import DT
 #' @importFrom dynamicTreeCut cutreeDynamic
 #' @importFrom ComplexHeatmap Heatmap
 #' @importFrom circlize colorRamp2
