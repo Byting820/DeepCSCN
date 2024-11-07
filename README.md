@@ -36,7 +36,7 @@ feat <- read.csv('data/processed/features.csv', row.names = 1)
 meta <- read.table('data/processed/meta_human.txt', row.names = 1, check.names = FALSE)
 
 # 1. Generate global gene co-expression network
-global_res <- global_net(feat)
+global_res <- global_net(feat,minClusterSize=10)
 print(global_res$global_cluster)
 
 # 2. Associate modules with cell types
@@ -50,8 +50,8 @@ dev.off()
 
 # 3. Generate cell-type-specific networks
 celltype_name <- "B cell"
-celltype_feat_path <- "data/res/B cell_feat.csv"
-CelltypeFeat('data/processed/markerGene.csv', features, count, meta)
+CelltypeFeat('data/processed/markerGene.csv', features, count, meta) #Running this code will automatically create the res folder in the directory
+celltype_feat_path <- "res/B cell_feat.csv"
 celltype_net <- CelltypeNet(celltype_feat_path, celltype_name, count, meta)
 print(celltype_net)
 
