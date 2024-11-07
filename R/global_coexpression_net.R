@@ -16,10 +16,10 @@
 #' This function performs clustering on a correlation matrix using dynamic tree cut.
 #'
 #' @name global_net
-#' @param cor A frature matrix from GeneCluster model.
+#' @param feat_matrix A frature matrix from GeneCluster model.
 #' @return Data frames of cormatrix and global cluster.
 #' @export
-global_net <- function(feat_matrix) {
+global_net <- function(feat_matrix,minClusterSize=10) {
     cor <- cosine(as.matrix(t(feat_matrix)))
     dist_cor = 1 - cor
     hclust_dist = hclust(as.dist(dist_cor), method = "average") 
@@ -27,7 +27,7 @@ global_net <- function(feat_matrix) {
                                           distM = dist_cor, 
                                           deepSplit = 2,
                                           pamRespectsDendro = FALSE,
-                                          minClusterSize = 10)
+                                          minClusterSize = minClusterSize)
     names(memb) = colnames(cor)
     memb_df = as.data.frame(memb)
     colnames(memb_df) = "cluster"
