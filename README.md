@@ -24,6 +24,8 @@ install.packages("devtools")
 
 # Install DeepCSCN from GitHub
 devtools::install_github("Byting820/DeepCSCN")
+# Alternatively, you can install the stable release version:
+install.packages( "releases/tag/v0.1.1/DeepCSCN_0.1.1.tar.gz", repos = NULL, type = "source" )
 ```
 
 ## Data preparation
