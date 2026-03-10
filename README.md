@@ -7,10 +7,12 @@ DeepCSCN (Cell-type-specific co-expression network inference based on deep learn
 ## Requirements
 
 - Seurat --- 4.1.1
-- las --- 0.73.3
+- lsa --- 0.73.3
+- dplyr --- 1.1.4
 - clusterProfiler --- 4.0.5
 - org.Hs.eg.db --- 3.16.0
 - ComplexHeatmap --- 2.8.0
+- WGCNA --- 1.73
 
 ## Installation
 
@@ -42,7 +44,7 @@ library(clusterProfiler)
 library(org.Hs.eg.db)
 
 ### Step 1.Data preprocess(optional)
-# If the data has already been processed, you can skip this step.)
+# If the data has already been processed, you can skip this step.
 # data format:gene*cell
 # hESC <- read.csv('data/hESC_Raw.csv',row.names=1, check.names=FALSE)
 # plot_df1 <- data.frame(mean=rowMeans(hESC))
