@@ -1,0 +1,9 @@
+# Local datasets and analysis outputs
+/data/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Locally built R packages
+/DeepCSCN_*.tar.gz

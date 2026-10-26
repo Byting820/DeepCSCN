@@ -1,0 +1,28 @@
+name: deepcscn-gpu
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.10.14
+  - pytorch=2.2.2
+  - pytorch-cuda=12.1
+  - numpy=1.26.4
+  - pandas=2.2.2
+  - scikit-learn=1.4.2
+  - scanpy=1.10.1
+  - r-base=4.2.3
+  - r-reticulate=1.36.1
+  - r-seurat=4.3.0
+  - r-lsa=0.73.3
+  - r-dplyr=1.1.4
+  - r-ggplot2=3.5.1
+  - r-wgcna=1.72_5
+  - r-dynamictreecut=1.63_1
+  - r-circlize=0.4.16
+  - r-pheatmap=1.0.12
+  - r-testthat=3.2.1.1
+  - bioconductor-clusterprofiler=4.6.2
+  - bioconductor-org.hs.eg.db=3.16.0
+  - bioconductor-complexheatmap=2.14.0

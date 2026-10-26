@@ -8,8 +8,6 @@ Run_GO(Cluster_res)
 }
 \arguments{
 \item{Cluster_res}{A data frame containing cluster results.}
-
-\item{universe}{A character vector of universe genes.}
 }
 \value{
 A data frame of GO enrichment results.

@@ -1,0 +1,5 @@
+.git
+.Rproj.user
+*.tar.gz
+data/cormat
+data/feat

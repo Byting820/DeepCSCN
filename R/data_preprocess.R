@@ -15,27 +15,25 @@
 #' }
 #' @export
 expr_density_plot <- function(plot_df) {
-  library(ggplot2)
-
   # Calculate density
-  density_info <- density(plot_df$mean)
+  density_info <- stats::density(plot_df$mean)
   peak_x <- density_info$x[which.max(density_info$y)]
   peak_y <- max(density_info$y)
   y_max <- peak_y * 1.1
 
-  p <- ggplot(plot_df, aes(x = mean)) +
-    geom_density(fill = "skyblue", alpha = 0.7) +
-    geom_vline(xintercept = peak_x, linetype = "dashed", color = "red") +
-    annotate("text", x = peak_x, y = peak_y,
+  p <- ggplot2::ggplot(plot_df, ggplot2::aes(x = mean)) +
+    ggplot2::geom_density(fill = "skyblue", alpha = 0.7) +
+    ggplot2::geom_vline(xintercept = peak_x, linetype = "dashed", color = "red") +
+    ggplot2::annotate("text", x = peak_x, y = peak_y,
              label = round(peak_x, 2),
              vjust = -0.5, color = "red") +
-    labs(x = "Gene Expression level", y = "Density") +
-    ylim(0, y_max) +
-    theme_minimal() +
-    theme(
-      plot.title = element_text(hjust = 0.5, face = "bold"),
-      axis.text = element_text(size = 10),
-      plot.margin = margin(t = 20, r = 10, b = 10, l = 10)
+    ggplot2::labs(x = "Gene Expression level", y = "Density") +
+    ggplot2::ylim(0, y_max) +
+    ggplot2::theme_minimal() +
+    ggplot2::theme(
+      plot.title = ggplot2::element_text(hjust = 0.5, face = "bold"),
+      axis.text = ggplot2::element_text(size = 10),
+      plot.margin = ggplot2::margin(t = 20, r = 10, b = 10, l = 10)
     )
   return(list(plot=p,
               peak_x=peak_x))
@@ -64,18 +62,16 @@ expr_density_plot <- function(plot_df) {
 #' }
 #' @export
 filter_expr <- function(expr, meta_path, cutoff) {
-  library(dplyr)
-
-  meta <- read.csv(meta_path, sep = ",", row.names = 1)
+  meta <- utils::read.csv(meta_path, sep = ",", row.names = 1)
 
   merged_data <- merge(t(expr), meta, by = "row.names")
   rownames(merged_data) <- merged_data$Row.names
   merged_data$Row.names <- NULL
 
-  mean_expression <- merged_data %>%
-    group_by(time_info) %>%
-    summarise_all(mean) %>%
-    t()
+  mean_expression <- t(dplyr::summarise_all(
+    dplyr::group_by_at(merged_data, "time_info"),
+    mean
+  ))
 
   colnames(mean_expression) <- mean_expression[1, ]
   mean_expression <- mean_expression[-1, ]
@@ -103,20 +99,18 @@ filter_expr <- function(expr, meta_path, cutoff) {
 #' }
 #' @export
 findHVG_py <- function(expr, num_HVG, python_env = NULL) {
-  library(reticulate)
-
   if (!is.null(python_env)) {
-    use_python(python_env, required = TRUE)
+    reticulate::use_python(python_env, required = TRUE)
   }
 
   # load Python script
-  hv_module <- import_from_path(
+  hv_module <- reticulate::import_from_path(
     module = "findHVG",
     path = system.file("python", package = "DeepCSCN")
   )
 
-  # transfer expr to pandas.DataFrame（cell x gene）
-  pd <- import("pandas")
+  # transfer expr to pandas.DataFrame (cell x gene)
+  pd <- reticulate::import("pandas")
   expr_df <- pd$DataFrame(expr)
 
   # call Python function

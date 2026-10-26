@@ -1,0 +1,4 @@
+^\.git$
+^\.dockerignore$
+^DeepCSCN_[0-9.]+\.tar\.gz$
+^data/(cormat|feat|res|true_network)(/|$)

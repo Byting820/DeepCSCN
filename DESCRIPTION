@@ -1,11 +1,38 @@
 Package: DeepCSCN
 Type: Package
-Title: DeepCSCN:an unsupervised deep learning framework enabling robust cell-type-specific gene co-expression inference from single-cell and spatial transcriptomic data
-Version: 0.1.1
-Author: Byting
-Maintainer: Byting <yutingya820@gmail.com>
-Description: A package for cell-type-specific gene co-expression network analysis.
+Title: Deep Learning for Cell-Type-Specific Gene Co-Expression Networks
+Version: 0.2.0
+Authors@R: person("Yuting", "Bai", role = c("aut", "cre"),
+    email = "yutingya820@gmail.com")
+Author: Yuting Bai [aut, cre]
+Maintainer: Yuting Bai <yutingya820@gmail.com>
+Description: Infers cell-type-specific gene co-expression networks from
+    single-cell and spatial transcriptomic data. The package calls a bundled
+    Python and PyTorch implementation of the GeneCluster convolutional neural
+    network, spatial pyramid pooling, and DeepCluster training workflow through
+    'reticulate', then provides R functions for cell-type-specific feature,
+    module, and functional analyses.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
+LazyDataCompression: xz
 RoxygenNote: 7.3.3
+Depends: R (>= 4.1.0)
+Imports:
+    circlize,
+    clusterProfiler,
+    ComplexHeatmap,
+    dplyr,
+    dynamicTreeCut,
+    ggplot2,
+    lsa,
+    org.Hs.eg.db,
+    pheatmap,
+    reticulate (>= 1.30),
+    Seurat,
+    utils
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+SystemRequirements: Python (>= 3.8), PyTorch (>= 1.8), NumPy, pandas,
+    scikit-learn

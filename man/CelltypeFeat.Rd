@@ -2,17 +2,21 @@
 % Please edit documentation in R/cell-type-specific_net.R
 \name{CelltypeFeat}
 \alias{CelltypeFeat}
-\title{Get the Top 10% Features for Each Cell Type}
+\title{Get the Top Ten Percent of Features for Each Cell Type}
 \usage{
 CelltypeFeat(DEG, feat, expr, meta, CellType_col)
 }
 \arguments{
-\item{feat}{A feat matrix from GeneCluster model.}
+\item{DEG}{A data frame of marker genes containing a `gene` column.}
 
-\item{expr}{expression matrix.}
+\item{feat}{A gene-by-feature matrix from the GeneCluster model.}
 
-\item{DEG_path}{Marker genes for different cell types.}
+\item{expr}{A gene-by-cell expression matrix.}
+
+\item{meta}{A cell metadata data frame whose row names match expression columns.}
+
+\item{CellType_col}{Name of the metadata column containing cell types or states.}
 }
 \description{
-Get the Top 10% Features for Each Cell Type
+Get the Top Ten Percent of Features for Each Cell Type
 }

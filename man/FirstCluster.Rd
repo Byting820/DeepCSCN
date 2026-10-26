@@ -8,8 +8,6 @@ FirstCluster(celltype_feat)
 }
 \arguments{
 \item{celltype_feat}{Selected cell type features.}
-
-\item{cor_matrix}{A correlation matrix of genes.}
 }
 \value{
 A data frame with gene clusters. Each gene is assigned a module number.
