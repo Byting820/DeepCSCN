@@ -151,35 +151,74 @@ The main analysis uses the following inputs:
 
 The following example illustrates preprocessing, GeneCluster training, and identification of developmental-stage-specific modules from an hESC dataset. Update the input and output paths to match your project.
 
-### 1. Optional preprocessing and highly variable gene selection
+### 1. Configure Python and load the input data
 
 ```r
 library(DeepCSCN)
 
-hESC <- read.csv("data/hESC_Raw.csv", row.names = 1, check.names = FALSE)
-meta_path <- "data/hESC_time_info.csv"
-
-plot_data <- data.frame(mean = rowMeans(hESC))
-density_result <- expr_density_plot(plot_data)
-filter_expression <- filter_expr(hESC, meta_path, round(density_result$peak_x, 2))
-
-# Scanpy is included in the supplied Conda environments.
-hvg <- findHVG_py(filter_expression, num_HVG = 1000)
-```
-
-### 2. Train GeneCluster from R
-
-Start R from the activated Conda environment. Alternatively, select the appropriate Python interpreter before initializing Python in the R session.
-
-```r
-library(DeepCSCN)
-
+# Configure Python before the first function that uses reticulate.
 configure_deepcscn_python(condaenv = "deepcscn")
 check_deepcscn_python()
 
+expression_path <- "path/to/expression.csv.gz"
+metadata_path <- "path/to/metadata.csv"
+target_state <- "00h"  # Replace with a value present in meta$time_info.
+results_dir <- "results"
+dir.create(results_dir, recursive = TRUE, showWarnings = FALSE)
+
+expression <- read.csv(expression_path, row.names = 1, check.names = FALSE)
+expression <- as.matrix(expression)
+storage.mode(expression) <- "double"
+meta <- read.csv(metadata_path, row.names = 1, check.names = FALSE)
+
+stopifnot(
+  !anyDuplicated(rownames(expression)),
+  !anyDuplicated(colnames(expression)),
+  !anyDuplicated(rownames(meta)),
+  "time_info" %in% colnames(meta),
+  all(rownames(meta) %in% colnames(expression)),
+  target_state %in% meta$time_info,
+  all(is.finite(expression)),
+  all(expression >= 0)
+)
+
+# Use the metadata order consistently throughout the analysis.
+expression <- expression[, rownames(meta), drop = FALSE]
+```
+
+If the GPU Conda environment is being used, replace `deepcscn` with
+`deepcscn-gpu`. Python must be selected before calling `findHVG_py()`,
+`check_deepcscn_python()`, or `run_genecluster()` in the R session.
+
+### 2. Filter genes and select highly variable genes
+
+```r
+plot_data <- data.frame(mean = rowMeans(expression))
+density_result <- expr_density_plot(plot_data)
+print(density_result$plot)
+
+filtered_expression <- filter_expr(
+  expression,
+  metadata_path,
+  cutoff = round(density_result$peak_x, 2)
+)
+
+n_hvg <- min(1000L, nrow(filtered_expression))
+hvg <- findHVG_py(filtered_expression, num_HVG = n_hvg)
+stopifnot(nrow(hvg) > 15L, identical(colnames(hvg), rownames(meta)))
+```
+
+Scanpy is included in the supplied Conda environments. If the input has
+already been normalized or log-transformed, replace this preprocessing block
+with the preprocessing appropriate for that data and pass the resulting
+gene-by-cell matrix to `run_genecluster()`.
+
+### 3. Train GeneCluster from R
+
+```r
 fit <- run_genecluster(
   expression = hvg,
-  output_dir = "results/genecluster_seed0",
+  output_dir = file.path(results_dir, "genecluster_seed0"),
   n_clusters = 15,
   epochs = 100,
   batch_size = 32,
@@ -196,37 +235,84 @@ plot(fit$history$epoch, fit$history$loss, type = "l")
 
 Each training directory contains the input matrix, learned feature matrix, pseudo-cluster assignments, epoch-level training history, PyTorch checkpoint, and `run_metadata.json`. The metadata records training parameters, dependency versions, resolved compute device, and the SHA-256 checksum of the input matrix.
 
-**GPU users:** change `condaenv = "deepcscn"` to `condaenv = "deepcscn-gpu"` when using the supplied GPU environment.
+The 100-epoch analysis may take substantial time. Use the installation smoke
+test shown earlier to verify the software before starting this run. A repeated
+call with the same output directory requires `overwrite = TRUE` or a new
+output directory.
 
-### 3. Identify cell-type- or state-specific modules
+### 4. Identify cell-type- or state-specific modules
 
 ```r
-markers <- marker_identify(hESC, meta_path, "data/hESC_marker.csv")
-meta <- read.csv(meta_path, row.names = 1)
-
-# Align annotation rows with expression-matrix columns.
-stopifnot(all(colnames(hvg) %in% rownames(meta)))
-meta <- meta[colnames(hvg), , drop = FALSE]
-DEG <- markers[markers$gene %in% intersect(markers$gene, rownames(hvg)), ]
+marker_path <- file.path(results_dir, "markers.csv")
+markers <- marker_identify(expression, metadata_path, marker_path)
+DEG <- markers[markers$gene %in% rownames(hvg), , drop = FALSE]
+DEG <- DEG[!duplicated(DEG$gene), , drop = FALSE]
+if (!nrow(DEG)) {
+  stop("No marker genes overlap the selected HVGs.")
+}
 
 CelltypeFeat(DEG, feat, hvg, meta, "time_info")
 
-# Update this path if your CelltypeFeat output is stored elsewhere.
-feat_00h <- read.csv("data/res/feat/00h_feat.csv", row.names = 1)
-first_result <- FirstCluster(feat_00h)
-cormat_00h <- first_result$celltype_cor
-cluster_00h <- first_result$celltype_cluster
+# CelltypeFeat currently writes one file per state under data/res/feat/.
+target_feature_path <- file.path(
+  "data", "res", "feat", paste0(target_state, "_feat.csv")
+)
+stopifnot(file.exists(target_feature_path))
+target_features <- read.csv(
+  target_feature_path,
+  row.names = 1,
+  check.names = FALSE
+)
 
-score_result <- CellTypeSpecificScore(hvg, meta, cluster_00h, "00h")
+first_result <- FirstCluster(target_features)
+gene_correlation <- first_result$celltype_cor
+initial_clusters <- first_result$celltype_cluster
+
+score_result <- CellTypeSpecificScore(
+  hvg,
+  meta,
+  initial_clusters,
+  target_state
+)
 print(score_result)
 
-# Example only: select the higher-scoring cluster based on score_result.
-# Cluster ID 2 is illustrative and must not be assumed for other datasets.
-selected_cluster_id <- 2L
-specific_module <- cluster_00h[cluster_00h$cluster == selected_cluster_id, , drop = FALSE]
-specific_cormat <- cormat_00h[rownames(specific_module), rownames(specific_module)]
-specific_cluster_result <- specific_cluster(specific_cormat, minClusterSize = 50)
-GO_result <- Run_GO(specific_cluster_result)
+# Select the initial cluster with the higher target-state specificity score.
+score_values <- c(score_result$M1_score, score_result$M2_score)
+if (any(!is.finite(score_values))) {
+  stop("The specificity scores are not finite; check zero-sum genes and metadata.")
+}
+selected_cluster_id <- which.max(score_values)
+specific_module <- initial_clusters[
+  initial_clusters$cluster == selected_cluster_id,
+  ,
+  drop = FALSE
+]
+if (nrow(specific_module) < 4L) {
+  stop("The selected initial cluster is too small for finer clustering.")
+}
+
+specific_correlation <- gene_correlation[
+  rownames(specific_module),
+  rownames(specific_module),
+  drop = FALSE
+]
+min_module_size <- min(50L, max(2L, nrow(specific_module) %/% 2L))
+specific_cluster_result <- specific_cluster(
+  specific_correlation,
+  minClusterSize = min_module_size
+)
+
+# dynamicTreeCut uses cluster 0 for unassigned genes; exclude it from GO.
+assigned_modules <- specific_cluster_result[
+  specific_cluster_result$cluster > 0,
+  ,
+  drop = FALSE
+]
+
+write.csv(
+  assigned_modules,
+  file.path(results_dir, paste0(target_state, "_modules.csv"))
+)
 ```
 
 The initial clustering step separates candidate gene groups. The target-cell-type specificity score is then used to identify the relevant group before finer module detection. **The cluster label itself has no fixed biological meaning**; select the group according to its score.
