@@ -16,17 +16,85 @@ Users do not need to modify Python scripts or specify a separate GeneCluster rep
 
 Run the commands below from the root directory of the DeepCSCN repository.
 
-### CPU environment (recommended for reproducibility checks)
+### Complete installation for new users (CPU)
 
-The reference CPU environment is specified in `environment.yml`:
+1. Confirm that Conda and the download tool are available:
+
+```bash
+conda --version
+curl --version
+```
+
+If `conda` is unavailable, install Miniconda or Anaconda before continuing.
+
+2. Create a working directory and download the v0.2.0 source package from the
+   GitHub Release:
+
+```bash
+mkdir -p deepcscn_install
+cd deepcscn_install
+
+curl -L -o DeepCSCN_0.2.0.tar.gz \
+  https://github.com/Byting820/DeepCSCN/releases/download/v0.2.0/DeepCSCN_0.2.0.tar.gz
+```
+
+3. Verify that the download is complete and unchanged:
+
+```bash
+echo "f38e4e7331a17b46af9152d6862550a55662268fee60c51b9ee04a6f521dd855  DeepCSCN_0.2.0.tar.gz" \
+  | sha256sum --check -
+```
+
+The expected output is `DeepCSCN_0.2.0.tar.gz: OK`. On macOS, calculate the
+checksum with `shasum -a 256 DeepCSCN_0.2.0.tar.gz` and compare it with the
+value above.
+
+4. Extract the source package and enter its directory:
+
+```bash
+tar -xzf DeepCSCN_0.2.0.tar.gz
+cd DeepCSCN
+```
+
+5. Create and activate the reference CPU environment:
 
 ```bash
 conda env create -f environment.yml
 conda activate deepcscn
-R CMD INSTALL .
-Rscript reproducibility/verify_environment.R
-Rscript reproducibility/test.R
 ```
+
+6. Ensure that `reticulate` uses the Python interpreter from this environment,
+   then install the R package:
+
+```bash
+export RETICULATE_PYTHON="$CONDA_PREFIX/bin/python"
+R CMD INSTALL .
+```
+
+A successful installation ends with `* DONE (DeepCSCN)`.
+
+7. Verify the installed R package and bundled Python backend:
+
+```bash
+Rscript -e 'library(DeepCSCN); cat("DeepCSCN", as.character(packageVersion("DeepCSCN")), "\n"); print(check_deepcscn_python())'
+Rscript reproducibility/verify_environment.R
+```
+
+The first command should report DeepCSCN version `0.2.0` and list the active
+Python, PyTorch, NumPy, pandas, and scikit-learn versions.
+
+8. Run the end-to-end, one-epoch CPU smoke test:
+
+```bash
+Rscript reproducibility/smoke_test.R
+```
+
+The final line should be:
+
+```text
+R-to-Python smoke test passed.
+```
+
 
 ### NVIDIA GPU environment
 
