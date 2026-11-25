@@ -1,0 +1,108 @@
+panel	epoch	metric	plotted_value
+d	1	ConvNet loss	1.798
+d	2	ConvNet loss	1.008
+d	3	ConvNet loss	0.782
+d	4	ConvNet loss	0.742
+d	5	ConvNet loss	0.563
+d	6	ConvNet loss	0.594
+d	7	ConvNet loss	0.554
+d	8	ConvNet loss	0.54
+d	9	ConvNet loss	0.45
+d	10	ConvNet loss	0.409
+d	11	ConvNet loss	0.375
+d	12	ConvNet loss	0.366
+d	13	ConvNet loss	0.34
+d	14	ConvNet loss	0.339
+d	15	ConvNet loss	0.304
+d	16	ConvNet loss	0.308
+d	17	ConvNet loss	0.279
+d	18	ConvNet loss	0.269
+d	19	ConvNet loss	0.295
+d	20	ConvNet loss	0.233
+d	21	ConvNet loss	0.248
+d	22	ConvNet loss	0.247
+d	23	ConvNet loss	0.204
+d	24	ConvNet loss	0.237
+d	25	ConvNet loss	0.207
+d	26	ConvNet loss	0.233
+d	27	ConvNet loss	0.201
+d	28	ConvNet loss	0.213
+d	29	ConvNet loss	0.228
+d	30	ConvNet loss	0.205
+d	31	ConvNet loss	0.206
+d	32	ConvNet loss	0.211
+d	33	ConvNet loss	0.176
+d	34	ConvNet loss	0.208
+d	35	ConvNet loss	0.22
+d	36	ConvNet loss	0.2
+d	37	ConvNet loss	0.194
+d	38	ConvNet loss	0.197
+d	39	ConvNet loss	0.204
+d	40	ConvNet loss	0.194
+d	41	ConvNet loss	0.172
+d	42	ConvNet loss	0.223
+d	43	ConvNet loss	0.163
+d	44	ConvNet loss	0.217
+d	45	ConvNet loss	0.203
+d	46	ConvNet loss	0.19
+d	47	ConvNet loss	0.194
+d	48	ConvNet loss	0.172
+d	49	ConvNet loss	0.205
+d	50	ConvNet loss	0.227
+d	51	ConvNet loss	0.209
+d	52	ConvNet loss	0.205
+d	53	ConvNet loss	0.184
+d	54	ConvNet loss	0.187
+e	1	NMI against previous assignment	0.504
+e	2	NMI against previous assignment	0.69
+e	3	NMI against previous assignment	0.672
+e	4	NMI against previous assignment	0.728
+e	5	NMI against previous assignment	0.799
+e	6	NMI against previous assignment	0.775
+e	7	NMI against previous assignment	0.761
+e	8	NMI against previous assignment	0.79
+e	9	NMI against previous assignment	0.842
+e	10	NMI against previous assignment	0.86
+e	11	NMI against previous assignment	0.92
+e	12	NMI against previous assignment	0.898
+e	13	NMI against previous assignment	0.907
+e	14	NMI against previous assignment	0.917
+e	15	NMI against previous assignment	0.911
+e	16	NMI against previous assignment	0.941
+e	17	NMI against previous assignment	0.965
+e	18	NMI against previous assignment	0.948
+e	19	NMI against previous assignment	0.961
+e	20	NMI against previous assignment	0.982
+e	21	NMI against previous assignment	0.97
+e	22	NMI against previous assignment	0.973
+e	23	NMI against previous assignment	0.992
+e	24	NMI against previous assignment	0.988
+e	25	NMI against previous assignment	0.992
+e	26	NMI against previous assignment	0.996
+e	27	NMI against previous assignment	0.998
+e	28	NMI against previous assignment	0.998
+e	29	NMI against previous assignment	0.996
+e	30	NMI against previous assignment	0.977
+e	31	NMI against previous assignment	0.972
+e	32	NMI against previous assignment	0.989
+e	33	NMI against previous assignment	1.0
+e	34	NMI against previous assignment	0.989
+e	35	NMI against previous assignment	0.995
+e	36	NMI against previous assignment	1.0
+e	37	NMI against previous assignment	0.995
+e	38	NMI against previous assignment	1.0
+e	39	NMI against previous assignment	0.989
+e	40	NMI against previous assignment	0.989
+e	41	NMI against previous assignment	1.0
+e	42	NMI against previous assignment	1.0
+e	43	NMI against previous assignment	1.0
+e	44	NMI against previous assignment	1.0
+e	45	NMI against previous assignment	1.0
+e	46	NMI against previous assignment	1.0
+e	47	NMI against previous assignment	1.0
+e	48	NMI against previous assignment	1.0
+e	49	NMI against previous assignment	1.0
+e	50	NMI against previous assignment	0.998
+e	51	NMI against previous assignment	0.998
+e	52	NMI against previous assignment	1.0
+e	53	NMI against previous assignment	1.0

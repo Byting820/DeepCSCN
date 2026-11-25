@@ -1,0 +1,211 @@
+panel	analysis	x	x_label	replicate	metric	plotted_value
+a	Feature threshold (PBMC B cells)	5	5	0	Cell-type specificity score	0.0798625588973607
+a	Feature threshold (PBMC B cells)	5	5	1	Cell-type specificity score	0.0805884764310064
+a	Feature threshold (PBMC B cells)	5	5	2	Cell-type specificity score	0.0651163389189611
+a	Feature threshold (PBMC B cells)	5	5	3	Cell-type specificity score	0.0844298792784691
+a	Feature threshold (PBMC B cells)	5	5	4	Cell-type specificity score	0.0908830682291661
+a	Feature threshold (PBMC B cells)	10	10	0	Cell-type specificity score	0.0810446859452083
+a	Feature threshold (PBMC B cells)	10	10	1	Cell-type specificity score	0.0623634048636805
+a	Feature threshold (PBMC B cells)	10	10	2	Cell-type specificity score	0.0966438285066766
+a	Feature threshold (PBMC B cells)	10	10	3	Cell-type specificity score	0.0919958227419396
+a	Feature threshold (PBMC B cells)	10	10	4	Cell-type specificity score	0.0949634693623198
+a	Feature threshold (PBMC B cells)	15	15	0	Cell-type specificity score	0.0782615459213847
+a	Feature threshold (PBMC B cells)	15	15	1	Cell-type specificity score	0.0655209465820138
+a	Feature threshold (PBMC B cells)	15	15	2	Cell-type specificity score	0.0438210182559012
+a	Feature threshold (PBMC B cells)	15	15	3	Cell-type specificity score	0.0810388591615274
+a	Feature threshold (PBMC B cells)	15	15	4	Cell-type specificity score	0.104162818674981
+a	Feature threshold (PBMC B cells)	20	20	0	Cell-type specificity score	0.0786314306426318
+a	Feature threshold (PBMC B cells)	20	20	1	Cell-type specificity score	0.0664384571025409
+a	Feature threshold (PBMC B cells)	20	20	2	Cell-type specificity score	0.0642304367482339
+a	Feature threshold (PBMC B cells)	20	20	3	Cell-type specificity score	0.0462204199222093
+a	Feature threshold (PBMC B cells)	20	20	4	Cell-type specificity score	0.0483152275007414
+b	Count depth (PBMC)	100	100	0	Cell-type specificity score	0.0810446859452083
+b	Count depth (PBMC)	100	100	1	Cell-type specificity score	0.0623634048636805
+b	Count depth (PBMC)	100	100	2	Cell-type specificity score	0.0966438285066766
+b	Count depth (PBMC)	100	100	3	Cell-type specificity score	0.0919958227419396
+b	Count depth (PBMC)	100	100	4	Cell-type specificity score	0.0949634693623198
+b	Count depth (PBMC)	75	75	0	Cell-type specificity score	0.103355393588899
+b	Count depth (PBMC)	75	75	1	Cell-type specificity score	0.0635256214770324
+b	Count depth (PBMC)	75	75	2	Cell-type specificity score	0.07891770118154
+b	Count depth (PBMC)	75	75	3	Cell-type specificity score	0.077711676293951
+b	Count depth (PBMC)	75	75	4	Cell-type specificity score	0.0918367531465572
+b	Count depth (PBMC)	50	50	0	Cell-type specificity score	0.109377576626604
+b	Count depth (PBMC)	50	50	1	Cell-type specificity score	0.108775769900821
+b	Count depth (PBMC)	50	50	2	Cell-type specificity score	0.0563445313195606
+b	Count depth (PBMC)	50	50	3	Cell-type specificity score	0.0585591765527986
+b	Count depth (PBMC)	50	50	4	Cell-type specificity score	0.0706037011940302
+b	Count depth (PBMC)	25	25	0	Cell-type specificity score	0.0802287212539328
+b	Count depth (PBMC)	25	25	1	Cell-type specificity score	0.0845114921132271
+b	Count depth (PBMC)	25	25	2	Cell-type specificity score	0.0890180500484103
+b	Count depth (PBMC)	25	25	3	Cell-type specificity score	0.0200169145041273
+b	Count depth (PBMC)	25	25	4	Cell-type specificity score	0.0320840304532703
+c	Rare B cells (PBMC)	851	851	0	Cell-type specificity score	0.0810446859452083
+c	Rare B cells (PBMC)	851	851	1	Cell-type specificity score	0.0623634048636805
+c	Rare B cells (PBMC)	851	851	2	Cell-type specificity score	0.0966438285066766
+c	Rare B cells (PBMC)	851	851	3	Cell-type specificity score	0.0919958227419396
+c	Rare B cells (PBMC)	851	851	4	Cell-type specificity score	0.0949634693623198
+c	Rare B cells (PBMC)	500	500	0	Cell-type specificity score	0.130459717390408
+c	Rare B cells (PBMC)	500	500	1	Cell-type specificity score	0.150820063756223
+c	Rare B cells (PBMC)	500	500	2	Cell-type specificity score	0.0465766933558386
+c	Rare B cells (PBMC)	500	500	3	Cell-type specificity score	0.0914938500642822
+c	Rare B cells (PBMC)	500	500	4	Cell-type specificity score	0.0733085042747148
+c	Rare B cells (PBMC)	250	250	0	Cell-type specificity score	0.295615120669294
+c	Rare B cells (PBMC)	250	250	1	Cell-type specificity score	0.112555679380041
+c	Rare B cells (PBMC)	250	250	2	Cell-type specificity score	0.297753659701121
+c	Rare B cells (PBMC)	250	250	3	Cell-type specificity score	0.232326413653685
+c	Rare B cells (PBMC)	250	250	4	Cell-type specificity score	0.294829704590523
+c	Rare B cells (PBMC)	100	100	0	Cell-type specificity score	0.18791320835066
+c	Rare B cells (PBMC)	100	100	1	Cell-type specificity score	0.495784230583439
+c	Rare B cells (PBMC)	100	100	2	Cell-type specificity score	0.509316842471232
+c	Rare B cells (PBMC)	100	100	3	Cell-type specificity score	0.406670303611391
+c	Rare B cells (PBMC)	100	100	4	Cell-type specificity score	0.190070152914335
+c	Rare B cells (PBMC)	50	50	0	Cell-type specificity score	0.429546807175376
+c	Rare B cells (PBMC)	50	50	1	Cell-type specificity score	0.395493192958247
+c	Rare B cells (PBMC)	50	50	2	Cell-type specificity score	0.703217544546002
+c	Rare B cells (PBMC)	50	50	3	Cell-type specificity score	0.115814821384072
+c	Rare B cells (PBMC)	50	50	4	Cell-type specificity score	0.123723712187132
+c	Rare B cells (PBMC)	25	25	0	Cell-type specificity score	0.2174738524821
+c	Rare B cells (PBMC)	25	25	1	Cell-type specificity score	0.212691870390058
+c	Rare B cells (PBMC)	25	25	2	Cell-type specificity score	0.178477440521514
+c	Rare B cells (PBMC)	25	25	3	Cell-type specificity score	0.0913305742888217
+c	Rare B cells (PBMC)	25	25	4	Cell-type specificity score	0.34224798733929
+d	Feature threshold (PBMC B cells)	5	5	0	Marker enrichment (fold)	3.72960372960373
+d	Feature threshold (PBMC B cells)	5	5	1	Marker enrichment (fold)	3.69173973234887
+d	Feature threshold (PBMC B cells)	5	5	2	Marker enrichment (fold)	5.78034682080925
+d	Feature threshold (PBMC B cells)	5	5	3	Marker enrichment (fold)	3.86847195357834
+d	Feature threshold (PBMC B cells)	5	5	4	Marker enrichment (fold)	4.91400491400491
+d	Feature threshold (PBMC B cells)	10	10	0	Marker enrichment (fold)	3.82775119617225
+d	Feature threshold (PBMC B cells)	10	10	1	Marker enrichment (fold)	3.13479623824451
+d	Feature threshold (PBMC B cells)	10	10	2	Marker enrichment (fold)	5.50964187327824
+d	Feature threshold (PBMC B cells)	10	10	3	Marker enrichment (fold)	4.6029919447641
+d	Feature threshold (PBMC B cells)	10	10	4	Marker enrichment (fold)	5.2321778940484
+d	Feature threshold (PBMC B cells)	15	15	0	Marker enrichment (fold)	3.65463682046597
+d	Feature threshold (PBMC B cells)	15	15	1	Marker enrichment (fold)	3.36700336700337
+d	Feature threshold (PBMC B cells)	15	15	2	Marker enrichment (fold)	3.2258064516129
+d	Feature threshold (PBMC B cells)	15	15	3	Marker enrichment (fold)	3.80771061399334
+d	Feature threshold (PBMC B cells)	15	15	4	Marker enrichment (fold)	6.37958532695375
+d	Feature threshold (PBMC B cells)	20	20	0	Marker enrichment (fold)	3.61827227498869
+d	Feature threshold (PBMC B cells)	20	20	1	Marker enrichment (fold)	3.39847068819031
+d	Feature threshold (PBMC B cells)	20	20	2	Marker enrichment (fold)	3.90625
+d	Feature threshold (PBMC B cells)	20	20	3	Marker enrichment (fold)	2.22407561857103
+d	Feature threshold (PBMC B cells)	20	20	4	Marker enrichment (fold)	4.01606425702811
+e	Count depth (PBMC)	100	100	0	Marker enrichment (fold)	3.82775119617225
+e	Count depth (PBMC)	100	100	1	Marker enrichment (fold)	3.13479623824451
+e	Count depth (PBMC)	100	100	2	Marker enrichment (fold)	5.50964187327824
+e	Count depth (PBMC)	100	100	3	Marker enrichment (fold)	4.6029919447641
+e	Count depth (PBMC)	100	100	4	Marker enrichment (fold)	5.2321778940484
+e	Count depth (PBMC)	75	75	0	Marker enrichment (fold)	7.27272727272727
+e	Count depth (PBMC)	75	75	1	Marker enrichment (fold)	3.690036900369
+e	Count depth (PBMC)	75	75	2	Marker enrichment (fold)	5.52486187845304
+e	Count depth (PBMC)	75	75	3	Marker enrichment (fold)	3.63636363636364
+e	Count depth (PBMC)	75	75	4	Marker enrichment (fold)	6.99300699300699
+e	Count depth (PBMC)	50	50	0	Marker enrichment (fold)	8.3594566353187
+e	Count depth (PBMC)	50	50	1	Marker enrichment (fold)	7.49765698219306
+e	Count depth (PBMC)	50	50	2	Marker enrichment (fold)	3.05576776165011
+e	Count depth (PBMC)	50	50	3	Marker enrichment (fold)	3.40136054421769
+e	Count depth (PBMC)	50	50	4	Marker enrichment (fold)	3.47977381470204
+e	Count depth (PBMC)	25	25	0	Marker enrichment (fold)	5.5944055944056
+e	Count depth (PBMC)	25	25	1	Marker enrichment (fold)	5.46821599453178
+e	Count depth (PBMC)	25	25	2	Marker enrichment (fold)	6.32411067193676
+e	Count depth (PBMC)	25	25	3	Marker enrichment (fold)	1.93423597678917
+e	Count depth (PBMC)	25	25	4	Marker enrichment (fold)	4.20168067226891
+f	Rare B cells (PBMC)	851	851	0	Marker enrichment (fold)	3.82775119617225
+f	Rare B cells (PBMC)	851	851	1	Marker enrichment (fold)	3.13479623824451
+f	Rare B cells (PBMC)	851	851	2	Marker enrichment (fold)	5.50964187327824
+f	Rare B cells (PBMC)	851	851	3	Marker enrichment (fold)	4.6029919447641
+f	Rare B cells (PBMC)	851	851	4	Marker enrichment (fold)	5.2321778940484
+f	Rare B cells (PBMC)	500	500	0	Marker enrichment (fold)	4.43458980044346
+f	Rare B cells (PBMC)	500	500	1	Marker enrichment (fold)	7.15819613457409
+f	Rare B cells (PBMC)	500	500	2	Marker enrichment (fold)	2.18818380743982
+f	Rare B cells (PBMC)	500	500	3	Marker enrichment (fold)	4.42477876106195
+f	Rare B cells (PBMC)	500	500	4	Marker enrichment (fold)	3.47222222222222
+f	Rare B cells (PBMC)	250	250	0	Marker enrichment (fold)	10.3092783505155
+f	Rare B cells (PBMC)	250	250	1	Marker enrichment (fold)	2.90909090909091
+f	Rare B cells (PBMC)	250	250	2	Marker enrichment (fold)	9.35828877005348
+f	Rare B cells (PBMC)	250	250	3	Marker enrichment (fold)	5.42740841248304
+f	Rare B cells (PBMC)	250	250	4	Marker enrichment (fold)	7.66703176341731
+f	Rare B cells (PBMC)	100	100	0	Marker enrichment (fold)	3.28947368421053
+f	Rare B cells (PBMC)	100	100	1	Marker enrichment (fold)	8.14111261872456
+f	Rare B cells (PBMC)	100	100	2	Marker enrichment (fold)	10.9090909090909
+f	Rare B cells (PBMC)	100	100	3	Marker enrichment (fold)	8.15850815850816
+f	Rare B cells (PBMC)	100	100	4	Marker enrichment (fold)	3.51339481774264
+f	Rare B cells (PBMC)	50	50	0	Marker enrichment (fold)	4.27807486631016
+f	Rare B cells (PBMC)	50	50	1	Marker enrichment (fold)	7.73694390715667
+f	Rare B cells (PBMC)	50	50	2	Marker enrichment (fold)	9.24499229583975
+f	Rare B cells (PBMC)	50	50	3	Marker enrichment (fold)	4.75963826749167
+f	Rare B cells (PBMC)	50	50	4	Marker enrichment (fold)	2.40384615384615
+f	Rare B cells (PBMC)	25	25	0	Marker enrichment (fold)	3.06748466257669
+f	Rare B cells (PBMC)	25	25	1	Marker enrichment (fold)	3.18979266347687
+f	Rare B cells (PBMC)	25	25	2	Marker enrichment (fold)	3.09477756286267
+f	Rare B cells (PBMC)	25	25	3	Marker enrichment (fold)	2.46913580246914
+f	Rare B cells (PBMC)	25	25	4	Marker enrichment (fold)	4.46179587283882
+g	Feature threshold (PBMC B cells)	5	5	0	AUPRC ratio	1.193610401474127
+g	Feature threshold (PBMC B cells)	5	5	1	AUPRC ratio	1.003869013938513
+g	Feature threshold (PBMC B cells)	5	5	2	AUPRC ratio	0.9037784789960834
+g	Feature threshold (PBMC B cells)	5	5	3	AUPRC ratio	0.9814109599826186
+g	Feature threshold (PBMC B cells)	5	5	4	AUPRC ratio	0.9358289727713222
+g	Feature threshold (PBMC B cells)	10	10	0	AUPRC ratio	1.2248163402301606
+g	Feature threshold (PBMC B cells)	10	10	1	AUPRC ratio	1.0983300603657136
+g	Feature threshold (PBMC B cells)	10	10	2	AUPRC ratio	0.9561594182584124
+g	Feature threshold (PBMC B cells)	10	10	3	AUPRC ratio	1.054717797108468
+g	Feature threshold (PBMC B cells)	10	10	4	AUPRC ratio	0.967629035113198
+g	Feature threshold (PBMC B cells)	15	15	0	AUPRC ratio	1.0244460769889985
+g	Feature threshold (PBMC B cells)	15	15	1	AUPRC ratio	1.0853382706264985
+g	Feature threshold (PBMC B cells)	15	15	2	AUPRC ratio	0.9071137031106364
+g	Feature threshold (PBMC B cells)	15	15	3	AUPRC ratio	1.1069548743494622
+g	Feature threshold (PBMC B cells)	15	15	4	AUPRC ratio	0.9769946352128884
+g	Feature threshold (PBMC B cells)	20	20	0	AUPRC ratio	0.9948238223699564
+g	Feature threshold (PBMC B cells)	20	20	1	AUPRC ratio	1.1155103290549055
+g	Feature threshold (PBMC B cells)	20	20	2	AUPRC ratio	0.9255791027245104
+g	Feature threshold (PBMC B cells)	20	20	3	AUPRC ratio	1.1009404554115525
+g	Feature threshold (PBMC B cells)	20	20	4	AUPRC ratio	0.9708578919172318
+h	Count depth (PBMC)	100	100	0	AUPRC ratio	1.2248163402301606
+h	Count depth (PBMC)	100	100	1	AUPRC ratio	1.0983300603657136
+h	Count depth (PBMC)	100	100	2	AUPRC ratio	0.9561594182584124
+h	Count depth (PBMC)	100	100	3	AUPRC ratio	1.054717797108468
+h	Count depth (PBMC)	100	100	4	AUPRC ratio	0.967629035113198
+h	Count depth (PBMC)	75	75	0	AUPRC ratio	0.7404804235572223
+h	Count depth (PBMC)	75	75	1	AUPRC ratio	1.3528177153535312
+h	Count depth (PBMC)	75	75	2	AUPRC ratio	1.44399607741881
+h	Count depth (PBMC)	75	75	3	AUPRC ratio	0.9188733433328764
+h	Count depth (PBMC)	75	75	4	AUPRC ratio	0.8761732311080331
+h	Count depth (PBMC)	50	50	0	AUPRC ratio	1.0402262272032328
+h	Count depth (PBMC)	50	50	1	AUPRC ratio	1.0128598762916488
+h	Count depth (PBMC)	50	50	2	AUPRC ratio	0.8550309715838708
+h	Count depth (PBMC)	50	50	3	AUPRC ratio	1.1019607211515123
+h	Count depth (PBMC)	50	50	4	AUPRC ratio	1.1238189868696615
+h	Count depth (PBMC)	25	25	0	AUPRC ratio	1.1734453278937131
+h	Count depth (PBMC)	25	25	1	AUPRC ratio	1.0939864251302074
+h	Count depth (PBMC)	25	25	2	AUPRC ratio	1.1871802108966625
+h	Count depth (PBMC)	25	25	3	AUPRC ratio	1.520393527738817
+h	Count depth (PBMC)	25	25	4	AUPRC ratio	1.0253576300287
+i	Rare B cells (PBMC)	851	851	0	AUPRC ratio	1.2248163402301606
+i	Rare B cells (PBMC)	851	851	1	AUPRC ratio	1.0983300603657136
+i	Rare B cells (PBMC)	851	851	2	AUPRC ratio	0.9561594182584124
+i	Rare B cells (PBMC)	851	851	3	AUPRC ratio	1.054717797108468
+i	Rare B cells (PBMC)	851	851	4	AUPRC ratio	0.967629035113198
+i	Rare B cells (PBMC)	500	500	0	AUPRC ratio	0.9765844223325646
+i	Rare B cells (PBMC)	500	500	1	AUPRC ratio	1.0955201783909252
+i	Rare B cells (PBMC)	500	500	2	AUPRC ratio	1.0545479424809296
+i	Rare B cells (PBMC)	500	500	3	AUPRC ratio	0.9880997956715554
+i	Rare B cells (PBMC)	500	500	4	AUPRC ratio	1.1740098950336455
+i	Rare B cells (PBMC)	250	250	0	AUPRC ratio	1.299093879053557
+i	Rare B cells (PBMC)	250	250	1	AUPRC ratio	1.1695882046041135
+i	Rare B cells (PBMC)	250	250	2	AUPRC ratio	1.2048979776301554
+i	Rare B cells (PBMC)	250	250	3	AUPRC ratio	1.085718611538246
+i	Rare B cells (PBMC)	250	250	4	AUPRC ratio	0.972774030815555
+i	Rare B cells (PBMC)	100	100	0	AUPRC ratio	1.084757430671968
+i	Rare B cells (PBMC)	100	100	1	AUPRC ratio	1.0342445351238958
+i	Rare B cells (PBMC)	100	100	2	AUPRC ratio	0.9904457701420276
+i	Rare B cells (PBMC)	100	100	3	AUPRC ratio	1.3780729507608098
+i	Rare B cells (PBMC)	100	100	4	AUPRC ratio	1.1657487128590611
+i	Rare B cells (PBMC)	50	50	0	AUPRC ratio	1.0085767361940456
+i	Rare B cells (PBMC)	50	50	1	AUPRC ratio	1.8252550389991944
+i	Rare B cells (PBMC)	50	50	2	AUPRC ratio	1.083283186654811
+i	Rare B cells (PBMC)	50	50	3	AUPRC ratio	1.0687553342973497
+i	Rare B cells (PBMC)	50	50	4	AUPRC ratio	1.5610608745158578
+i	Rare B cells (PBMC)	25	25	0	AUPRC ratio	0.9392573756514188
+i	Rare B cells (PBMC)	25	25	1	AUPRC ratio	0.9790852832152624
+i	Rare B cells (PBMC)	25	25	2	AUPRC ratio	1.127571171512629
+i	Rare B cells (PBMC)	25	25	3	AUPRC ratio	0.970543121034656
+i	Rare B cells (PBMC)	25	25	4	AUPRC ratio	1.2761449439671584

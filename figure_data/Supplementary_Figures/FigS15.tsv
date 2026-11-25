@@ -1,0 +1,86 @@
+panel	method	cell_number	metric	unit	plotted_value
+a	GeneCluster	500	GeneCluster training runtime	min	2.51
+a	GeneCluster	1000	GeneCluster training runtime	min	3.84
+a	GeneCluster	2000	GeneCluster training runtime	min	5.29
+a	GeneCluster	5000	GeneCluster training runtime	min	28.38
+a	GeneCluster	10000	GeneCluster training runtime	min	54.99
+b	GeneCluster	500	GeneCluster training CPU memory	GB	4.6
+b	GeneCluster	1000	GeneCluster training CPU memory	GB	4.7
+b	GeneCluster	2000	GeneCluster training CPU memory	GB	4.7
+b	GeneCluster	5000	GeneCluster training CPU memory	GB	4.7
+b	GeneCluster	10000	GeneCluster training CPU memory	GB	5.0
+c	GeneCluster	500	GeneCluster training GPU memory	GB	1.63
+c	GeneCluster	1000	GeneCluster training GPU memory	GB	1.72
+c	GeneCluster	2000	GeneCluster training GPU memory	GB	1.86
+c	GeneCluster	5000	GeneCluster training GPU memory	GB	2.5
+c	GeneCluster	10000	GeneCluster training GPU memory	GB	3.34
+d	feature	500	Correlation/module method runtime	min	0.04
+d	feature	1000	Correlation/module method runtime	min	0.06
+d	feature	2000	Correlation/module method runtime	min	0.11
+d	feature	5000	Correlation/module method runtime	min	0.26
+d	feature	10000	Correlation/module method runtime	min	0.54
+d	cormat	500	Correlation/module method runtime	min	4.57
+d	cormat	1000	Correlation/module method runtime	min	5.06
+d	cormat	2000	Correlation/module method runtime	min	5.27
+d	cormat	5000	Correlation/module method runtime	min	5.16
+d	cormat	10000	Correlation/module method runtime	min	5.36
+d	scWGCNA	500	Correlation/module method runtime	min	5.59
+d	scWGCNA	1000	Correlation/module method runtime	min	3.34
+d	scWGCNA	2000	Correlation/module method runtime	min	3.36
+d	scWGCNA	5000	Correlation/module method runtime	min	4.24
+d	scWGCNA	10000	Correlation/module method runtime	min	4.75
+d	hdWGCNA	500	Correlation/module method runtime	min	1.4
+d	hdWGCNA	1000	Correlation/module method runtime	min	3.76
+d	hdWGCNA	2000	Correlation/module method runtime	min	3.75
+d	hdWGCNA	5000	Correlation/module method runtime	min	14.8
+d	hdWGCNA	10000	Correlation/module method runtime	min	13.3
+d	sclink	500	Correlation/module method runtime	min	0.48
+d	sclink	1000	Correlation/module method runtime	min	0.94
+d	sclink	2000	Correlation/module method runtime	min	1.31
+d	sclink	5000	Correlation/module method runtime	min	2.22
+d	sclink	10000	Correlation/module method runtime	min	3.56
+d	CSCORE	500	Correlation/module method runtime	min	0.13
+d	CSCORE	1000	Correlation/module method runtime	min	0.23
+d	CSCORE	2000	Correlation/module method runtime	min	0.63
+d	CSCORE	5000	Correlation/module method runtime	min	1.73
+d	CSCORE	10000	Correlation/module method runtime	min	3.61
+d	SingleCellGGM	500	Correlation/module method runtime	min	24.6
+d	SingleCellGGM	1000	Correlation/module method runtime	min	15.0
+d	SingleCellGGM	2000	Correlation/module method runtime	min	14.4
+d	SingleCellGGM	5000	Correlation/module method runtime	min	18.6
+d	SingleCellGGM	10000	Correlation/module method runtime	min	35.4
+e	feature	500	Correlation/module method CPU memory	GB	0.06
+e	feature	1000	Correlation/module method CPU memory	GB	0.09
+e	feature	2000	Correlation/module method CPU memory	GB	0.15
+e	feature	5000	Correlation/module method CPU memory	GB	0.32
+e	feature	10000	Correlation/module method CPU memory	GB	0.6
+e	cormat	500	Correlation/module method CPU memory	GB	1.11
+e	cormat	1000	Correlation/module method CPU memory	GB	1.11
+e	cormat	2000	Correlation/module method CPU memory	GB	1.11
+e	cormat	5000	Correlation/module method CPU memory	GB	1.11
+e	cormat	10000	Correlation/module method CPU memory	GB	1.11
+e	scWGCNA	500	Correlation/module method CPU memory	GB	2.64
+e	scWGCNA	1000	Correlation/module method CPU memory	GB	2.41
+e	scWGCNA	2000	Correlation/module method CPU memory	GB	2.41
+e	scWGCNA	5000	Correlation/module method CPU memory	GB	6.41
+e	scWGCNA	10000	Correlation/module method CPU memory	GB	15.2
+e	hdWGCNA	500	Correlation/module method CPU memory	GB	0.4
+e	hdWGCNA	1000	Correlation/module method CPU memory	GB	0.9
+e	hdWGCNA	2000	Correlation/module method CPU memory	GB	0.9
+e	hdWGCNA	5000	Correlation/module method CPU memory	GB	3.33
+e	hdWGCNA	10000	Correlation/module method CPU memory	GB	3.75
+e	sclink	500	Correlation/module method CPU memory	GB	1.03
+e	sclink	1000	Correlation/module method CPU memory	GB	1.59
+e	sclink	2000	Correlation/module method CPU memory	GB	2.79
+e	sclink	5000	Correlation/module method CPU memory	GB	6.41
+e	sclink	10000	Correlation/module method CPU memory	GB	12.9
+e	CSCORE	500	Correlation/module method CPU memory	GB	1.02
+e	CSCORE	1000	Correlation/module method CPU memory	GB	1.7
+e	CSCORE	2000	Correlation/module method CPU memory	GB	3.05
+e	CSCORE	5000	Correlation/module method CPU memory	GB	7.08
+e	CSCORE	10000	Correlation/module method CPU memory	GB	13.8
+e	SingleCellGGM	500	Correlation/module method CPU memory	GB	0.4
+e	SingleCellGGM	1000	Correlation/module method CPU memory	GB	0.4
+e	SingleCellGGM	2000	Correlation/module method CPU memory	GB	0.42
+e	SingleCellGGM	5000	Correlation/module method CPU memory	GB	0.53
+e	SingleCellGGM	10000	Correlation/module method CPU memory	GB	0.54

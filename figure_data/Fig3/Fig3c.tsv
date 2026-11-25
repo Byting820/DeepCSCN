@@ -1,0 +1,26 @@
+subpanel	metric	condition	cell_type	seed	numerator	denominator	fraction	percent
+left	module_consistency	Within cell type	B cell	0	120	134	0.89552238806	89.552238806
+left	module_consistency	Global	B cell	2	119	134	0.888059701493	88.8059701493
+left	module_consistency	Within cell type	CD4+ T cell	3	198	231	0.857142857143	85.7142857143
+left	module_consistency	Global	CD4+ T cell	3	171	231	0.74025974026	74.025974026
+left	module_consistency	Within cell type	Cytotoxic T cell	1	171	216	0.791666666667	79.1666666667
+left	module_consistency	Global	Cytotoxic T cell	4	154	216	0.712962962963	71.2962962963
+left	module_consistency	Within cell type	CD14+ monocyte	3	291	384	0.7578125	75.78125
+left	module_consistency	Global	CD14+ monocyte	0	251	384	0.653645833333	65.3645833333
+left	module_consistency	Within cell type	CD16+ monocyte	0	119	161	0.739130434783	73.9130434783
+left	module_consistency	Global	CD16+ monocyte	4	113	161	0.701863354037	70.1863354037
+right	marker_proportion	Original	B cell	-1	7	134	0.0522388059701	5.22388059701
+right	marker_proportion	Within cell type	B cell	1	11	275	0.04	4
+right	marker_proportion	Global	B cell	3	9	271	0.0332103321033	3.32103321033
+right	marker_proportion	Original	CD4+ T cell	-1	2	231	0.00865800865801	0.865800865801
+right	marker_proportion	Within cell type	CD4+ T cell	2	2	407	0.004914004914	0.4914004914
+right	marker_proportion	Global	CD4+ T cell	2	2	488	0.00409836065574	0.409836065574
+right	marker_proportion	Original	Cytotoxic T cell	-1	3	216	0.0138888888889	1.38888888889
+right	marker_proportion	Within cell type	Cytotoxic T cell	4	3	289	0.0103806228374	1.03806228374
+right	marker_proportion	Global	Cytotoxic T cell	2	3	339	0.00884955752212	0.884955752212
+right	marker_proportion	Original	CD14+ monocyte	-1	29	384	0.0755208333333	7.55208333333
+right	marker_proportion	Within cell type	CD14+ monocyte	1	30	422	0.0710900473934	7.10900473934
+right	marker_proportion	Global	CD14+ monocyte	2	30	425	0.0705882352941	7.05882352941
+right	marker_proportion	Original	CD16+ monocyte	-1	15	161	0.0931677018634	9.31677018634
+right	marker_proportion	Within cell type	CD16+ monocyte	1	13	253	0.0513833992095	5.13833992095
+right	marker_proportion	Global	CD16+ monocyte	2	13	269	0.0483271375465	4.83271375465

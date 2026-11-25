@@ -1,0 +1,7 @@
+{
+  "activity_definition": "mean gene-wise z-score per cell; one-sided Wilcoxon target-state cells > all other cells; BH within method x time; adjusted P <= 0.05",
+  "GO_definition": "at least one GO term with within-module BH-adjusted P <= 0.05",
+  "marker_definition": "COSG top-50 for corresponding time; one-sided hypergeometric test; BH across modules within method x time; adjusted P <= 0.05",
+  "marker_fraction_definition": "corresponding-time COSG marker genes contained in evaluable modules / sum of evaluable module sizes across module-time instances",
+  "peak_metric_used_in_primary_tables": false
+}
